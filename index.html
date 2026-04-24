@@ -1,208 +1,196 @@
 <!DOCTYPE html>
-<html 
->
-    <head lang="en">
-        <title>Alaa Portfolio</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="me.png">
-    <link rel="stylesheet" href="Style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Alaa Sunono Portfolio - Full Stack Engineer and UI/UX Designer" />
+    <title>Alaa Portfolio</title>
 
-
-
-    </head>
-
+    <link rel="icon" type="image/x-icon" href="me.png" />
+    <link rel="stylesheet" href="Style.css" />
+</head>
 
 <body>
-<header>
-    <nav>
-        <ul>
-            <li>HOME</li>
-            <li>ABOUT</li>
-            <li>CONTACT</li>
-            <li>SKILLS</li>
-            <li>PROJECT</li>
-            <li>RESUME</li>
-        </ul>
-    </nav>
-</header>
 
-<div class="Herosection">
-    <div class="hero text" > 
-<h4>Hello I’m </h4>
-<h1>Alaa Sunono</h1>
-<h2 class="role">Full Stack Engineer<br>+ UI/UX Designer</h2>
-<p>Fourth year Computer Engineering student skilled in web design and development,
-     using Photoshop, Canva, and Figma to create creative and 
-     user-friendly websites.</p>
-     <img src="mypics/Me1.svg" alt="My picture" width="870" height="750">
-     </div>
-<button class="Button">Contact me</button>
-</div>
-<div class="Aboutmesection">
-    <h1>About Me</h1>
-    <p>I'm a fourth year Computer Engineering student passionate about programming and web development.
-I also have strong skills in UI/UX design, blending creativity with functionality to build engaging digital experiences.
-In addition, I'm a graphic designer, video editor, voice engineer, and artist, always seeking new ways to expss ideas visually and creatively.
-I love learning, exploring new technologies, and continuously improving my skills.</p>
-<img alt="My picture" src="mypics/Me2.svg">
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="sociallmediabuttons">
-    <div class="circlebutton">
-        <button class="circlebutton"><img alt="gethub icon" src="Icons/github.svg"></button>
-        <button class="circlebutton"><img alt="instagram icon" src="Icons/instagram.svg"></button>
-        <button class="circlebutton"><img alt="linkedin icon" src="Icons/linkedin.svg">
-</button>
+    <main>
+<section id="home" class="hero-section section-with-content">
+    <canvas id="starsCanvas" aria-hidden="true"></canvas>
 
-    </div>
-</div>
-</div>
-<div class="Myskillssection">    
-<div class="skillscard">
-<div class="circlebutton"><img alt="person icon" src="Icons/person.svg"></div>
-<h4>Soft Skills</h4>
-<p>A Website is an extension of yourself and we 
-can help you to expss it properly. 
-Your website is your number one marketing 
-asset because we live in a digital age.</p>
-</div>
+    <div class="hero-content">
+                <div class="hero-text">
+                    <p class="eyebrow">Hello, I’m</p>
+                    <h1>Alaa Sunono</h1>
+                    <h2>Full Stack Engineer<br />+ UI/UX Designer</h2>
+                    <p class="hero-description">
+                        Fourth-year Computer Engineering student skilled in web design and development,
+                        using Photoshop, Canva, and Figma to create creative, user-friendly websites.
+                    </p>
+                    <a class="primary-button" href="#contact">Contact Me</a>
+                </div>
 
-<div class="skillscard">
-<div class="circlebutton"><img alt="coding icon" src="Icons/coding.svg"></div>
-<h4>Web development</h4>
-<p>A Website is an extension of yourself and 
-we can help you to expss it properly. 
-Your website is your number one marketing 
-asset because we live in a digital age.</p>
-</div>
+                <div class="hero-image-wrapper" aria-label="Alaa personal illustration">
+                    <img src="mypics/Me1.svg" alt="Alaa Sunono illustration" />
+                </div>
+            </div>
+        </section>
 
-<div class="skillscard">
-<div class="circlebutton"><img alt="person icon" src="Icons/Design.svg"></div>
-<h4>Designing</h4>
-<p>A Website is an extension of yourself and 
-we can help you to expss it properly.
-Your website is your number one marketing 
-asset because we live in a digital age.</p>
-</div>
-<img alt="right arrow" src="Icons/rightarrow.svg">
-<img alt="left arrow" src="Icons/leftarrow.svg">
+        <section id="about" class="about-section section-with-content reveal-section">
+            <div class="about-image">
+                <img src="mypics/Me2.svg" alt="Alaa Sunono illustration" />
+            </div>
 
-<div class="dots">
-    <div class="dot"></div> 
-    <div class="dot"></div> 
-    <div class="dot"></div> 
-    <div class="dot"></div> 
-    <div class="dot"></div> 
-</div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    I’m a fourth-year Computer Engineering student passionate about programming and web development.
+                    I also have strong skills in UI/UX design, blending creativity with functionality to build engaging
+                    digital experiences. In addition, I’m a graphic designer, video editor, voice engineer, and artist,
+                    always seeking new ways to express ideas visually and creatively.
+                </p>
 
-</div>
-<div class="Myprojectssection">
-    <h1>My Projects</h1>
-    <button class="Button2">Graphic Design</button>
-    <button class="Button2">UI/UX Design</button>
-    <button class="Button2">Web programmming</button>
-    <button class="Button2">Video Editing</button>
+                <div class="social-media-buttons" aria-label="Social media links">
+                    <a class="circle-button" href="#" aria-label="Facebook"><img src="Icons/facebook.svg" alt="" /></a>
+                    <a class="circle-button" href="#" aria-label="Instagram"><img src="Icons/instagram.svg" alt="" /></a>
+                    <a class="circle-button" href="#" aria-label="LinkedIn"><img src="Icons/linkedin.svg" alt="" /></a>
+                </div>
+            </div>
+        </section>
 
+        <section id="skills" class="skills-section section-with-content reveal-section">
+            <div class="section-heading">
+                <h2>My Skills</h2>
+                <p>Design, development, and creative problem solving.</p>
+            </div>
 
-    <div class="projectcard">
-        <div class="projectpicture"></div>
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <div class="circle-button icon-only"><img src="Icons/person.svg" alt="" /></div>
+                    <h3>Soft Skills</h3>
+                    <p>
+                        Communication, teamwork, problem solving, presentation skills, and the ability to understand
+                        users’ needs before designing the final solution.
+                    </p>
+                </article>
 
-        <div class="projectinfo">
-            <h6>Title 1</h6>
-            <h5>Title 2</h5>
-            <p>information about the project</p>
-        <button class="readmore">Read more
-            <img alt="arightarrow" src="Icons/arightarrow.svg"></button>
+                <article class="skill-card featured-card">
+                    <div class="circle-button icon-only"><img src="Icons/coding.svg" alt="" /></div>
+                    <h3>Web Development</h3>
+                    <p>
+                        Building responsive websites using HTML, CSS, JavaScript, and full-stack development concepts
+                        with clean structure and user-focused interfaces.
+                    </p>
+                </article>
 
-        </div>
-    </div>
+                <article class="skill-card">
+                    <div class="circle-button icon-only"><img src="Icons/Design.svg" alt="" /></div>
+                    <h3>UI/UX Design</h3>
+                    <p>
+                        Designing wireframes, visual interfaces, prototypes, color systems, and user flows using tools
+                        such as Figma, Canva, and Photoshop.
+                    </p>
+                </article>
+            </div>
+        </section>
 
-    
-    <div class="projectcard">
-        <div class="projectpicture"></div>
+        <section id="projects" class="projects-section section-with-content reveal-section">
+            <div class="section-heading">
+                <h2>My Projects</h2>
+                <p>A selection of design, development, and creative work.</p>
+            </div>
 
-        <div class="projectinfo">
-            <h6>Title 1</h6>
-            <h5>Title 2</h5>
-            <p>information about the project</p>
-        <button class="readmore">Read more
-            <img alt="arightarrow" src="Icons/arightarrow.svg">
-        </button>
+            <div class="project-filters" aria-label="Project categories">
+                <button class="filter-button active" type="button">Graphic Design</button>
+                <button class="filter-button" type="button">UI/UX Design</button>
+                <button class="filter-button" type="button">Web Programming</button>
+                <button class="filter-button" type="button">Video Editing</button>
+            </div>
 
-        </div>
-    </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-picture"></div>
+                    <div class="project-info">
+                        <span class="project-category">Web Development</span>
+                        <h3>Personal Portfolio</h3>
+                        <p>A responsive portfolio website with animated sections, dark/light mode support, and a creative identity.</p>
+                        <a class="read-more" href="#">Read more <img src="Icons/arightarrow.svg" alt="" /></a>
+                    </div>
+                </article>
 
-    
-    <div class="projectcard">
-        <div class="projectpicture"></div>
+                <article class="project-card">
+                    <div class="project-picture"></div>
+                    <div class="project-info">
+                        <span class="project-category">UI/UX Design</span>
+                        <h3>Mobile App Concept</h3>
+                        <p>A clean user interface concept focused on accessibility, simple navigation, and modern visual hierarchy.</p>
+                        <a class="read-more" href="#">Read more <img src="Icons/arightarrow.svg" alt="" /></a>
+                    </div>
+                </article>
 
-        <div class="projectinfo">
-            <h6>Title 1</h6>
-            <h5>Title 2</h5>
-            <p>information about the project</p>
-        <button class="readmore">Read more
-            <img alt="arightarrow" src="Icons/arightarrow.svg">
-        </button>
+                <article class="project-card">
+                    <div class="project-picture"></div>
+                    <div class="project-info">
+                        <span class="project-category">Graphic Design</span>
+                        <h3>Brand Identity</h3>
+                        <p>Visual identity design including color palette, typography, social media assets, and layout direction.</p>
+                        <a class="read-more" href="#">Read more <img src="Icons/arightarrow.svg" alt="" /></a>
+                    </div>
+                </article>
 
-        </div>
-    </div>
+                <article class="project-card">
+                    <div class="project-picture"></div>
+                    <div class="project-info">
+                        <span class="project-category">Development</span>
+                        <h3>Smart Garden Game</h3>
+                        <p>A Java-based educational game idea combining plant data, prediction logic, and route optimization.</p>
+                        <a class="read-more" href="#">Read more <img src="Icons/arightarrow.svg" alt="" /></a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    
-    <div class="projectcard">
-        <div class="projectpicture"></div>
+        <section id="contact" class="contact-section section-with-content reveal-section">
+            <div class="contact-content">
+                <h2>Get In Touch</h2>
+                <p>
+                    Have a project, an idea, or a question?<br />
+                    Let’s create something amazing together.
+                </p>
 
-        <div class="projectinfo">
-            <h6>Title 1</h6>
-            <h5>Title 2</h5>
-            <p>information about the project</p>
-        <button class="readmore">Read more
-            <img alt="arightarrow" src="Icons/arightarrow.svg">
-        </button>
+                <a class="primary-button say-hello" href="mailto:alaa@example.com">
+                    Say Hello!
+                    <span class="plane" aria-hidden="true">✈</span>
+                </a>
 
-        </div>
-    </div>
+                <p class="social-title">Or via Social Media</p>
 
-    
-    <div class="projectcard">
-        <div class="projectpicture"></div>
+                <div class="social-media-buttons" aria-label="Contact social media links">
+                    <a class="circle-button" href="#" aria-label="WhatsApp"><img src="Icons/whatsapp.svg" alt="" /></a>
+                    <a class="circle-button" href="#" aria-label="Facebook"><img src="Icons/facebook.svg" alt="" /></a>
+                    <a class="circle-button" href="#" aria-label="Instagram"><img src="Icons/instagram.svg" alt="" /></a>
+                    <a class="circle-button" href="#" aria-label="LinkedIn"><img src="Icons/linkedin.svg" alt="" /></a>
+                    <a class="circle-button github-icon" href="#" aria-label="GitHub"><img src="Icons/github.svg" alt="" /></a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <div class="projectinfo">
-            <h6>Title 1</h6>
-            <h5>Title 2</h5>
-            <p>information about the project</p>
-        <button class="readmore">Read more
-            <img alt="arightarrow" src="Icons/arightarrow.svg">
-        </button>
+    <footer id="resume">
+        <p>Designed &amp; developed with 💜 by Alaa Sunono</p>
+    </footer>
 
-        </div>
-    </div>
-
-<img alt="rightarrow2" src="Icons/rightarrow2.svg">
-<img alt="leftarrow2" src="Icons/leftarrow2.svg">
-</div>
-
-<div class="Getintuchsection">
-<p>    
-<span class="pattern">Get In touch</span>
-        
-Have a project, an idea, or a question?
-Let’s create something amazing together !
-
-Reach out to me via email </p>
-
-<button class="Button">Say Hello!</button>
-<p>Or via Social Media</p>
-<div class="sociallmediabuttons">
-<button class="circlebutton"><img alt="whatsapp icon" src="Icons/whatsapp.svg"></button>
-<button class="circlebutton"><img alt="facebook icon" src="Icons/facebook.svg"></button>
-<button class="circlebutton"><img alt="instagram icon" src="Icons/instagram.svg"></button>
-<button class="circlebutton"><img alt="linkedin icon" src="Icons/linkedin.svg"></button>
-<button class="circlebutton"><img alt="gethub icon" src="Icons/github.svg"></button>
-</div>
-</div>
-
-<footer>Designed & developed with 💜 by Alaa Sunono</footer>
+    <script src="script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>
-
