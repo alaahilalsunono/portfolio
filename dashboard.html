@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alaa Portfolio Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">AS</div>
+        <div>
+          <h2>Alaa Admin</h2>
+          <p>Portfolio CMS</p>
+        </div>
+      </div>
+
+      <nav class="side-nav" aria-label="Dashboard navigation">
+        <button class="nav-link active" data-page="dashboard"><span>⌂</span> Dashboard</button>
+        <button class="nav-link" data-page="projects"><span>▣</span> Projects</button>
+        <button class="nav-link" data-page="skills"><span>✦</span> Skills</button>
+        <button class="nav-link" data-page="messages"><span>✉</span> Messages</button>
+        <button class="nav-link" data-page="resume"><span>▤</span> Resume</button>
+        <button class="nav-link" data-page="settings"><span>⚙</span> Settings</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Portfolio status</p>
+        <strong>Published</strong>
+        <div class="status-bar"><span></span></div>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">☰</button>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="globalSearch" type="text" placeholder="Search projects, skills, messages..." />
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" title="Notifications">🔔<span class="notification-dot"></span></button>
+          <div class="admin-profile">
+            <div class="avatar">A</div>
+            <div>
+              <strong>Alaa Sunono</strong>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="page active" id="dashboardPage">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">Overview</span>
+              <h1>Dashboard</h1>
+              <p>Control your portfolio content, projects, skills, resume, and messages from one clean place.</p>
+            </div>
+            <button class="primary-btn" data-open-project-modal>+ Add Project</button>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div><p>Total Projects</p><h2 id="statProjects">0</h2><span>Published portfolio work</span></div>
+              <div class="stat-icon purple">▣</div>
+            </article>
+            <article class="stat-card">
+              <div><p>Skills</p><h2 id="statSkills">0</h2><span>Featured abilities</span></div>
+              <div class="stat-icon yellow">✦</div>
+            </article>
+            <article class="stat-card">
+              <div><p>Messages</p><h2 id="statMessages">0</h2><span id="unreadText">Unread inbox</span></div>
+              <div class="stat-icon pink">✉</div>
+            </article>
+          </div>
+
+          <div class="two-column">
+            <section class="panel">
+              <div class="panel-header"><h3>Quick Actions</h3></div>
+              <div class="quick-actions">
+                <button class="action-card" data-open-project-modal><span>＋</span><div><strong>Add New Project</strong><p>Create a portfolio case card.</p></div></button>
+                <button class="action-card yellow-action" data-page-target="resume"><span>⇧</span><div><strong>Upload Resume</strong><p>Replace your CV PDF file.</p></div></button>
+                <button class="action-card" data-page-target="settings"><span>⚙</span><div><strong>Edit Profile</strong><p>Update public portfolio info.</p></div></button>
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header"><h3>Recent Activity</h3></div>
+              <div class="activity-list" id="activityList"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="projectsPage">
+          <div class="page-heading compact">
+            <div><span class="eyebrow">Content</span><h1>Projects</h1><p>Add, filter, edit, and remove portfolio projects.</p></div>
+            <button class="primary-btn" data-open-project-modal>+ Add New Project</button>
+          </div>
+          <div class="filter-row" id="projectFilters"></div>
+          <div class="projects-grid" id="projectsGrid"></div>
+        </section>
+
+        <section class="page" id="skillsPage">
+          <div class="page-heading compact">
+            <div><span class="eyebrow">Expertise</span><h1>Skills</h1><p>Manage technical, design, and soft skills.</p></div>
+            <button class="primary-btn" data-open-skill-modal>+ Add Skill</button>
+          </div>
+          <div class="filter-row" id="skillFilters"></div>
+          <div class="skills-grid" id="skillsGrid"></div>
+        </section>
+
+        <section class="page" id="messagesPage">
+          <div class="page-heading compact">
+            <div><span class="eyebrow">Inbox</span><h1>Messages</h1><p>Preview contact requests and mark them as read.</p></div>
+            <button class="ghost-btn" id="markAllRead">Mark all read</button>
+          </div>
+          <div class="message-layout">
+            <div class="message-list" id="messageList"></div>
+            <div class="panel message-preview" id="messagePreview">
+              <div class="empty-state">Select a message to preview it.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="resumePage">
+          <div class="page-heading compact">
+            <div><span class="eyebrow">Document</span><h1>Resume</h1><p>Upload a PDF resume and keep a quick preview of the current version.</p></div>
+          </div>
+          <div class="resume-card panel">
+            <div class="resume-icon">PDF</div>
+            <div>
+              <h3 id="resumeName">Alaa_Sunono_Resume.pdf</h3>
+              <p id="resumeMeta">Last updated: Today · Ready for portfolio link</p>
+              <div class="resume-actions">
+                <label class="primary-btn file-label">Upload PDF<input id="resumeUpload" type="file" accept="application/pdf" hidden></label>
+                <button class="ghost-btn" id="downloadResume">Download Preview</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="settingsPage">
+          <div class="page-heading compact">
+            <div><span class="eyebrow">Profile</span><h1>Settings</h1><p>Update admin profile and public portfolio identity.</p></div>
+          </div>
+          <form class="settings-form panel" id="settingsForm">
+            <div class="form-grid">
+              <label>Display Name<input name="name" value="Alaa Sunono"></label>
+              <label>Email<input name="email" value="alaa@example.com"></label>
+              <label>Role<input name="role" value="Full Stack Engineer + UI/UX Designer"></label>
+              <label>Portfolio Status<select name="status"><option>Published</option><option>Draft</option><option>Maintenance</option></select></label>
+            </div>
+            <label>Short Bio<textarea name="bio">Fourth-year Computer Engineering student passionate about programming, design, and creative digital experiences.</textarea></label>
+            <button class="primary-btn" type="submit">Save Settings</button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header"><h2 id="projectModalTitle">Add Project</h2><button class="close-modal" data-close-modal>×</button></div>
+      <form id="projectForm">
+        <input type="hidden" name="id" />
+        <label>Project Title<input name="title" required placeholder="Smart Garden Game"></label>
+        <label>Description<textarea name="description" required placeholder="Short project description"></textarea></label>
+        <div class="form-grid two">
+          <label>Category<select name="category"><option>Full Stack</option><option>Frontend</option><option>Backend</option><option>UI/UX</option><option>Graphic Design</option></select></label>
+          <label>Image URL<input name="image" placeholder="https://... or ./images/project.png"></label>
+        </div>
+        <div class="form-grid two">
+          <label>GitHub Link<input name="github" placeholder="https://github.com/..." /></label>
+          <label>Live Demo<input name="demo" placeholder="https://..." /></label>
+        </div>
+        <div class="modal-actions"><button type="button" class="ghost-btn" data-close-modal>Cancel</button><button class="primary-btn" type="submit">Save Project</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="skillModal" aria-hidden="true">
+    <div class="modal-card small">
+      <div class="modal-header"><h2 id="skillModalTitle">Add Skill</h2><button class="close-modal" data-close-modal>×</button></div>
+      <form id="skillForm">
+        <input type="hidden" name="id" />
+        <label>Skill Name<input name="name" required placeholder="React.js"></label>
+        <label>Category<select name="category"><option>Frontend</option><option>Backend</option><option>Language</option><option>Database</option><option>Design</option><option>Tools</option><option>Soft Skill</option></select></label>
+        <label>Level (%)<input name="level" type="number" min="0" max="100" required value="85"></label>
+        <label class="check-label"><input name="featured" type="checkbox"> Featured skill</label>
+        <div class="modal-actions"><button type="button" class="ghost-btn" data-close-modal>Cancel</button><button class="primary-btn" type="submit">Save Skill</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Saved successfully</div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
